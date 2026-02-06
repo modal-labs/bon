@@ -38,16 +38,16 @@ error: from_iter is incompatible with #[builder(const)] because FromIterator::fr
   --> tests/integration/ui/compile_fail/attr_const.rs:45:22
    |
 45 |     #[builder(with = FromIterator::from_iter)]
-   |                      ^^^^^^^^^^^^
+   |                      ^^^^^^^^^^^^^^^^^^^^^^^
 
 error: from_iter is incompatible with #[builder(const)] because FromIterator::from_iter() can not be called in const context
   --> tests/integration/ui/compile_fail/attr_const.rs:52:22
    |
 52 |     #[builder(with = <_>::from_iter)]
-   |                      ^
+   |                      ^^^^^^^^^^^^^^
 
 error: this kind of expression is not allowed in this position; if you need to use a complex expression such as this then move it into a separate `const fn` and call that function here instead
   --> tests/integration/ui/compile_fail/attr_const.rs:59:25
    |
 59 |     #[builder(default = return 1)]
-   |                         ^^^^^^
+   |                         ^^^^^^^^

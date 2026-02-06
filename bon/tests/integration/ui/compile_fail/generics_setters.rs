@@ -1,7 +1,6 @@
 use bon::Builder;
 
 // Test that conversion methods properly detect generic parameter usage in various type positions
-// and reset fields that use the converted generic parameter
 
 #[derive(Builder)]
 #[builder(generics(setters(name = "conv_{}")))]

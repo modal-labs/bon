@@ -8,13 +8,13 @@ error: this syntax is not supported in type patterns yet. If you have a use case
  --> tests/integration/ui/compile_fail/attr_on.rs:6:15
   |
 6 | #[builder(on(&dyn std::fmt::Debug, into))]
-  |               ^^^
+  |               ^^^^^^^^^^^^^^^^^^^
 
 error: nested attributes are not allowed in the type pattern of #[builder(on(type_pattern, ...))]
  --> tests/integration/ui/compile_fail/attr_on.rs:9:17
   |
 9 | #[builder(on(fn(#[attr] a: u32), into))]
-  |                 ^
+  |                 ^^^^^^^
 
 error: this empty `on` attribute is unexpected; remove it or pass parameters in parentheses: `on(...)`
   --> tests/integration/ui/compile_fail/attr_on.rs:12:11
@@ -46,19 +46,19 @@ error: this `on(...)` clause is out of order; all `on(...)` clauses must be cons
   --> tests/integration/ui/compile_fail/attr_on.rs:27:5
    |
 27 |     on(String, into),
-   |     ^^
+   |     ^^^^^^^^^^^^^^^^
 
 error: this `on(...)` clause is out of order; all `on(...)` clauses must be consecutive; there shouldn't be any other parameters between them
   --> tests/integration/ui/compile_fail/attr_on.rs:35:5
    |
 35 |     on(String, into),
-   |     ^^
+   |     ^^^^^^^^^^^^^^^^
 
 error: this `on(...)` clause is out of order; all `on(...)` clauses must be consecutive; there shouldn't be any other parameters between them
   --> tests/integration/ui/compile_fail/attr_on.rs:43:5
    |
 43 |     on(String, into),
-   |     ^^
+   |     ^^^^^^^^^^^^^^^^
 
 error: `required` can only be specified in the first `on(...)` clause; this restriction may be lifted in the future
   --> tests/integration/ui/compile_fail/attr_on.rs:48:30

@@ -8,13 +8,13 @@ error: Missing field `bounds`
   --> tests/integration/ui/compile_fail/attr_derive.rs:62:18
    |
 62 | #[builder(derive(Clone()))]
-   |                  ^^^^^
+   |                  ^^^^^^^
 
 error: wrong delimiter, expected parentheses e.g. `bounds(...)`, but got curly braces: `bounds{...}`
   --> tests/integration/ui/compile_fail/attr_derive.rs:66:24
    |
 66 | #[builder(derive(Clone(bounds {})))]
-   |                        ^^^^^^
+   |                        ^^^^^^^^^
 
 error: `#[builder(derive(Into))` is incompatible with `#[builder(finish_fn)]` members because `From::from()` method accepts zero parameters
   --> tests/integration/ui/compile_fail/attr_derive.rs:70:48
@@ -80,7 +80,7 @@ error: Unexpected meta-item format `list`
    --> tests/integration/ui/compile_fail/attr_derive.rs:132:18
     |
 132 | #[builder(derive(Into(bounds(u32: Copy))))]
-    |                  ^^^^
+    |                  ^^^^^^^^^^^^^^^^^^^^^^^
 
 error[E0277]: the trait bound `NoTraitImpls: Clone` is not satisfied
  --> tests/integration/ui/compile_fail/attr_derive.rs:9:23

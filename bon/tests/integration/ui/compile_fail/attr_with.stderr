@@ -5,7 +5,7 @@ error: expected a closure e.g. `#[builder(with = |param: T| expression)]` or a w
  --> tests/integration/ui/compile_fail/attr_with.rs:5:15
   |
 5 |     #[builder(with = 42)]
-  |               ^^^^
+  |               ^^^^^^^^^
 
 error: `with` attribute can't be specified together with `into`
   --> tests/integration/ui/compile_fail/attr_with.rs:11:21
@@ -17,7 +17,7 @@ error: `for<...>` syntax is not allowed here
   --> tests/integration/ui/compile_fail/attr_with.rs:17:22
    |
 17 |     #[builder(with = for<'a> |x: &'a u32| -> u32 { x + 1 })]
-   |                      ^^^
+   |                      ^^^^^^^
 
 error: `const` keyword is not allowed here
   --> tests/integration/ui/compile_fail/attr_with.rs:23:22
@@ -119,7 +119,7 @@ error: expected one of the following:
   --> tests/integration/ui/compile_fail/attr_with.rs:73:38
    |
 73 |     #[builder(with = |value: u32| -> Result<> {})]
-   |                                      ^^^^^^
+   |                                      ^^^^^^^^
 
 error: expected one of the following:
 
@@ -145,7 +145,7 @@ error: expected one of the following:
   --> tests/integration/ui/compile_fail/attr_with.rs:79:38
    |
 79 |     #[builder(with = |value: u32| -> ::core::result::Result<A, B, C> {})]
-   |                                      ^
+   |                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 error: `with = Some` only works for members with the underlying type of `Option`;
   --> tests/integration/ui/compile_fail/attr_with.rs:86:12
